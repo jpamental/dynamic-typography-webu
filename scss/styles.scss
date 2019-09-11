@@ -7,7 +7,7 @@
   --font-stack-sans: "Plex Sans", Helvetica, arial, sans-serif;
   --font-stack-serif: "Plex Serif", Georgia, "Times New Roman", serif;
   --font-stack-sans-vf: "Plex Sans VF", Helvetica, arial, sans-serif;
-  --font-stack-serif-vf: "Voto Serif GX", Georgia, "Times New Roman", serif;
+  --font-stack-sans2-vf: "Recursive VF", Helvetica, arial, sans-serif;
   --font-stack-sans-alt-vf: "Roboto Delta", Helvetica, arial, sans-serif;
 
   --font-stack-heading: var(--font-stack-sans);
@@ -44,7 +44,7 @@
   --color-a-focus: var(--color-red);
    
   /* initial values  */
-  --text-wght: 90;
+  --text-wght: 450;
   --text-wdth: 100;
   --text-opsz: 16;
   
@@ -75,8 +75,8 @@
   --p-lh-min: 1.3;
   --p-lh-mid: 1.4;
   --p-lh-max: 1.6;
-  --p-wdth-min: 90;
-  --p-wdth-mid: 95;
+  --p-wdth-min: 100;
+  --p-wdth-mid: 100;
   --p-wdth-max: 100;
 
   --h1-size-min: calc( var(--h1-size-s-px) / var(--rem-px) );
@@ -230,7 +230,7 @@ p {
 @supports (font-variation-settings: normal) {
   :root {
     --font-stack-heading: var(--font-stack-sans-vf);
-    --font-stack-body: var(--font-stack-serif-vf);
+    --font-stack-body: var(--font-stack-sans2-vf);
   }
   h1 {
     --text-opsz: var(--h1-size-s-px);

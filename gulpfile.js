@@ -1,44 +1,55 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var del = require('del');
-var runSequence = require('run-sequence');
+// Initialize modules
+// Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
+const { src, dest, watch, series, parallel } = require('gulp');
+// Importing all the Gulp-related packages we want to use
+const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync');
+const server = browserSync.create();
 
-// Basic Gulp task syntax
-gulp.task('hello', function() {
-  console.log('Hello Zell!');
-})
 
-// Development Tasks 
-// -----------------
+function reload(done) {
+  server.reload();
+  done();
+}
 
-// Start browserSync server
-gulp.task('browserSync', function() {
-  browserSync({
+function serve(done) {
+  server.init({
     server: {
       baseDir: './'
     }
-  })
-})
+  });
+  done();
+}
 
-gulp.task('sass', () => {
-  return gulp.src('scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
-    .pipe(sass().on('error', sass.logError)) // Passes it through a gulp-sass, log errors to console
-    .pipe(gulp.dest('css')) // Outputs it in the css folder
-    .pipe(browserSync.reload({ // Reloading with Browser Sync
-      stream: true
-    }));
-})
+// File paths
+const files = { 
+    scssPath: 'scss/**/*.scss',
+    jsPath: 'js/**/*.js'
+}
 
-// Watchers
-gulp.task('watch', () => {
-  gulp.watch('scss/**/*.scss', ['sass']);
-  gulp.watch('*.html', browserSync.reload);
-  gulp.watch('js/**/*.js', browserSync.reload);
-})
+// Sass task: compiles the style.scss file into style.css
+function scssTask(){    
+    return src(files.scssPath)
+        .pipe(sourcemaps.init()) // initialize sourcemaps first
+        .pipe(sass()) // compile SCSS to CSS
+        .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+        .pipe(dest('css')
+    ); // put final CSS in dist folder
+}
 
+// Watch task: watch SCSS and JS files for changes
+// If any change, run scss and js tasks simultaneously
+function watchTask(){
+    watch([files.scssPath, files.jsPath], 
+        parallel(scssTask), reload);    
+}
 
-// Build Sequences
-// ---------------
-
-gulp.task('default', gulp.series(['sass', 'browserSync'], 'watch'));
+// Export the default Gulp task so it can be run
+// Runs the scss and js tasks simultaneously
+// then runs cacheBust, then watch task
+exports.default = series(
+    parallel(scssTask), 
+    serve, 
+    watchTask
+);

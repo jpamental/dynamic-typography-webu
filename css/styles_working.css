@@ -21,6 +21,15 @@
   font-stretch: 50% 130%;
   font-weight: 28 194; }
 
+/* Note below that you can find min and max */
+/* values for width and weight */
+@font-face {
+  font-family: 'Recursive VF';
+  src: url("../fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_08_26.woff2") format("woff2-variations");
+  font-display: swap;
+  font-style: oblique 0deg 15deg;
+  font-weight: 300 900; }
+
 /* Plex Sans Variable Font */
 @font-face {
   font-family: 'Plex Sans VF';
@@ -213,3 +222,5 @@ body {
   font-family: var(--font-stack-body);
   margin: 0;
   padding: 0 2em 0 0.5em; }
+
+/*# sourceMappingURL=styles_working.css.map */
