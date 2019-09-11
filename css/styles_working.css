@@ -1,26 +1,4 @@
 /* breakpoint variables */
-@font-face {
-  font-family: "Roboto Delta";
-  src: url("../fonts/RobotoDelta_v2-VF.woff2") format("woff2-variations");
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-  font-style: normal;
-  font-display: swap; }
-
-/* Voto Serif Variable Font */
-/*
-  Variations used:
-    wght (28-194)
-    wdth (50-130)
-    OPSZ (12-72)
-*/
-@font-face {
-  font-family: 'Voto Serif GX';
-  src: url("../fonts/VotoSerifGX.woff2") format("woff2-variations");
-  font-display: swap;
-  font-stretch: 50% 130%;
-  font-weight: 28 194; }
-
 /* Note below that you can find min and max */
 /* values for width and weight */
 @font-face {

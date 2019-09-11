@@ -1,11 +1,14 @@
 @import "vars";
-@import "webfonts";
-
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@200..900&display=swap');
 
 :root {
   /* font stack */
   --font-stack-sans: "Plex Sans", Helvetica, arial, sans-serif;
   --font-stack-serif: "Plex Serif", Georgia, "Times New Roman", serif;
+  --font-stack-serif-vf: "Hepta Slab", Georgia, "Times New Roman", serif;
+  --font-stack-serif2-vf: "Crimson Pro", Georgia, "Times New Roman", serif;
   --font-stack-sans-vf: "Plex Sans VF", Helvetica, arial, sans-serif;
   --font-stack-sans2-vf: "Recursive VF", Helvetica, arial, sans-serif;
 
@@ -256,8 +259,8 @@ p {
 \* -------------------- */
 @supports (font-variation-settings: normal) {
   :root {
-    --font-stack-heading: var(--font-stack-sans2-vf);
-    --font-stack-body: var(--font-stack-sans-vf);
+    --font-stack-heading: var(--font-stack-serif-vf);
+    --font-stack-body: var(--font-stack-serif2-vf);
   }
   h1 {
     font-size: calc( var(--h1-size-min) * 1em );

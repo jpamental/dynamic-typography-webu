@@ -1,115 +1,13 @@
 /* breakpoint variables */
-/* Note below that you can find min and max */
-/* values for width and weight */
-@font-face {
-  font-family: 'Recursive VF';
-  src: url("../fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_08_26.woff2") format("woff2-variations");
-  font-display: swap;
-  font-style: oblique 0deg 15deg;
-  font-weight: 300 900; }
-
-/* Plex Sans Variable Font */
-@font-face {
-  font-family: 'Plex Sans VF';
-  src: url("../fonts/plex-sans-vf/IBMPlexSansVar-Roman.woff2") format("woff2-variations");
-  font-display: swap;
-  font-stretch: 85% 100%;
-  font-style: normal;
-  font-weight: 100 700; }
-
-@font-face {
-  font-family: 'Plex Sans VF';
-  src: url("../fonts/plex-sans-vf/IBMPlexSansVar-Italic.woff2") format("woff2-variations");
-  font-display: swap;
-  font-stretch: 85% 100%;
-  font-style: italic;
-  font-weight: 100 700; }
-
-/* Gimlet Variable Font */
-@font-face {
-  font-family: 'Gimlet VF';
-  src: url("https://rwt.io/_demo_fonts/gimlet/Gimlet_Romans-VF.woff2") format("woff2-variations");
-  font-display: swap;
-  font-stretch: 64% 100%;
-  font-style: normal;
-  font-weight: 300 800; }
-
-@font-face {
-  font-family: 'Gimlet VF';
-  src: url("https://rwt.io/_demo_fonts/gimlet/Gimlet_Italics-VF.woff2") format("woff2-variations");
-  font-display: swap;
-  font-stretch: 64% 100%;
-  font-style: italic;
-  font-weight: 300 800; }
-
-@font-face {
-  font-family: 'Gimlet Banner VF';
-  src: url("https://rwt.io/_demo_fonts/gimlet/GimletVariableCondensedBold-VF.woff2") format("woff2-variations");
-  font-display: swap;
-  font-style: normal;
-  font-weight: normal; }
-
-/* static web fonts */
-@font-face {
-  font-family: 'Plex Sans';
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Regular.eot");
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-Regular.woff2") format("woff2"), url("../fonts/IBM-Plex-Sans/woff/IBMPlexSans-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Plex Sans';
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Bold.eot");
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-Bold.woff2") format("woff2"), url("../fonts/IBM-Plex-Sans/woff/IBMPlexSans-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Plex Sans';
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Italic.eot");
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-Italic.woff2") format("woff2"), url("../fonts/IBM-Plex-Sans/woff/IBMPlexSans-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Plex Sans';
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-BoldItalic.eot");
-  src: url("../fonts/IBM-Plex-Sans/eot/IBMPlexSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-BoldItalic.woff2") format("woff2"), url("../fonts/IBM-Plex-Sans/woff/IBMPlexSans-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Plex Serif';
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-Regular.eot");
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Serif/woff2/IBMPlexSerif-Regular.woff2") format("woff2"), url("../fonts/IBM-Plex-Serif/woff/IBMPlexSerif-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Plex Serif';
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-Bold.eot");
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Serif/woff2/IBMPlexSerif-Bold.woff2") format("woff2"), url("../fonts/IBM-Plex-Serif/woff/IBMPlexSerif-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Plex Serif';
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-Italic.eot");
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Serif/woff2/IBMPlexSerif-Italic.woff2") format("woff2"), url("../fonts/IBM-Plex-Serif/woff/IBMPlexSerif-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Plex Serif';
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-BoldItalic.eot");
-  src: url("../fonts/IBM-Plex-Serif/eot/IBMPlexSerif-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/IBM-Plex-Serif/woff2/IBMPlexSerif-BoldItalic.woff2") format("woff2"), url("../fonts/IBM-Plex-Serif/woff/IBMPlexSerif-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic; }
-
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@200..900&display=swap");
 :root {
   /* font stack */
   --font-stack-sans: "Plex Sans", Helvetica, arial, sans-serif;
   --font-stack-serif: "Plex Serif", Georgia, "Times New Roman", serif;
+  --font-stack-serif-vf: "Hepta Slab", Georgia, "Times New Roman", serif;
+  --font-stack-serif2-vf: "Crimson Pro", Georgia, "Times New Roman", serif;
   --font-stack-sans-vf: "Plex Sans VF", Helvetica, arial, sans-serif;
   --font-stack-sans2-vf: "Recursive VF", Helvetica, arial, sans-serif;
   --font-stack-heading: var(--font-stack-sans);
@@ -345,8 +243,8 @@ p {
 \* -------------------- */
 @supports (font-variation-settings: normal) {
   :root {
-    --font-stack-heading: var(--font-stack-sans2-vf);
-    --font-stack-body: var(--font-stack-sans-vf); }
+    --font-stack-heading: var(--font-stack-serif-vf);
+    --font-stack-body: var(--font-stack-serif2-vf); }
   h1 {
     font-size: calc( var(--h1-size-min) * 1em);
     font-stretch: calc( var(--h1-wdth-min) * 1%);
@@ -804,4 +702,4 @@ a:focus {
 .toggle-theme-mod.off:after {
   content: ": off"; }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles-gf.css.map */
