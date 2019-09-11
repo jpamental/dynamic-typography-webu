@@ -1,7 +1,6 @@
 @import "vars";
 @import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
   /* font stack */
@@ -80,10 +79,6 @@
   --p-wdth-min: 100;
   --p-wdth-mid: 100;
   --p-wdth-max: 100;
-  --p-PROP: 1; /* bool: 0 or 1 */
-  --p-XPRN: 0; /* range: 0 to 1 */
-  --p-ital: 0; /* bool: 0 or 1 */
-  --p-slnt: 0; /* range: 0 to -15 */
 
   --h1-size-min: calc( var(--h1-size-s-px) / var(--rem-px) );
   --h1-size-mid: calc( var(--h1-size-m-px) / var(--rem-px) );
@@ -96,19 +91,7 @@
   --h1-wdth-max: 100;
   --h1-wght-min: 575;
   --h1-wght-mid: 625;
-  --h1-wght-max: 675;
-  --h1-XPRN-min: 0;
-  --h1-XPRN-max: 1;
-  --h1-slnt-min: 0;
-  --h1-slnt-max: 0;
-
-  /* default starting scale value */
-  --h1-wdth: var(--h1-wdth-min);
-  --h1-wght: var(--h1-wght-min);
-  --h1-PROP: 1; /* bool: 0 or 1 */
-  --h1-XPRN: var(--h1-XPRN-min); /* range: 0 to 1 */
-  --h1-ital: 0; /* bool: 0 or 1 */
-  --h1-slnt: 0; /* range: 0 to -15 */
+  --h1-wght-max: 775;
 
   --h2-size-min: calc( var(--h2-size-s-px) / var(--rem-px) );
   --h2-size-mid: calc( var(--h2-size-m-px) / var(--rem-px) );
@@ -122,18 +105,6 @@
   --h2-wght-min: 575;
   --h2-wght-mid: 625;
   --h2-wght-max: 675;
-  --h2-XPRN-min: 0;
-  --h2-XPRN-max: 1;
-  --h2-slnt-min: -15;
-  --h2-slnt-max: 0;
-
-  /* default starting scale value */
-  --h2-wdth: var(--h2-wdth-min);
-  --h2-wght: var(--h2-wght-min);
-  --h2-PROP: 1; /* bool: 0 or 1 */
-  --h2-XPRN: var(--h2-XPRN-min); /* range: 0 to 1 */
-  --h2-ital: 1; /* bool: 0 or 1 */
-  --h2-slnt: -15; /* range: 0 to -15 */
 
 }
 
@@ -252,6 +223,10 @@ p {
   }
 }
 
+em {
+  font-synthesis: none;
+}
+
 /* -------------------- *\
 
      Variable Fonts
@@ -265,7 +240,6 @@ p {
   h1 {
     font-size: calc( var(--h1-size-min) * 1em );
     font-stretch: calc( var(--h1-wdth-min) * 1% );
-    font-variation-settings: "ital" var(--h1-ital), "slnt" var(--h1-slnt), "PROP" var(--h1-PROP), "XPRN" var(--h1-XPRN);
     font-weight: var(--h1-wght);
     @media screen and (min-width: $bp-em-small) {
       line-height: calc(( var(--h1-lh-min) * 1em ) + ( var(--h1-lh-max) - var(--h1-lh-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xlarge) - var(--bp-small) )));
@@ -283,21 +257,15 @@ p {
   }
 
   h2 {
-    --text-opsz: var(--h2-size-s-px);
-    --text-wght: 575;
     font-size: calc( var(--h2-size-min) * 1em );
-    font-stretch: calc( var(--h2-wdth-min) * 1% );
-    font-variation-settings: 'opsz' var(--text-opsz);
-    font-weight: var(--h2-wght-min);
-    font-variation-settings: "ital" var(--h2-ital), "slnt" var(--h2-slnt), "PROP" var(--h2-PROP), "XPRN" var(--h2-XPRN);
+    font-stretch: calc( var(--h2-wdth) * 1% );
+    font-weight: var(--h2-wght);
     @media screen and (min-width: $bp-em-small) {
       line-height: calc(( var(--h2-lh-min) * 1em ) + ( var(--h2-lh-max) - var(--h2-lh-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xlarge) - var(--bp-small) )));
       font-size: calc(( var(--h2-size-min) * 1em ) + ( var(--h2-size-max) - var(--h2-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xlarge) - var(--bp-small) )));
     }
     @media screen and (min-width: $bp-em-medium) {
-      --text-opsz: var(--h2-size-m-px);
       font-stretch: calc( var(--h2-wdth-mid) * 1% );
-      font-weight: var(--h2-wght-mid);
       max-width: 40rem;
     }
     @media screen and (min-width: $bp-em-large) {
@@ -305,7 +273,6 @@ p {
       max-width: 42rem;
     }
     @media screen and (min-width: $bp-em-xlarge) {
-      --text-opsz: var(--h2-size-l-px);
       font-size: calc( var(--h2-size-max) * 1em );
       font-stretch: calc( var(--h2-wdth-max) * 1% );
       line-height: var(--h2-lh-max);
@@ -314,19 +281,15 @@ p {
   }
 
   p {
-    --text-opsz: var(--p-size-s-px);
-    --text-wdth: calc( var(--p-vf-wdth) * .9 );
     font-size: calc( var(--p-size-min) * 1em );
     font-stretch: calc( var(--p-wdth-min) * 1% );
     font-synthesis: none;
     font-weight: var(--text-wght);
-    font-variation-settings: "ital" var(--p-ital), "slnt" var(--p-slnt), "PROP" var(--p-PROP), "XPRN" var(--p-XPRN);
     @media screen and (min-width: $bp-em-small) {
       line-height: calc(( var(--p-lh-min) * 1em ) + ( var(--p-lh-max) - var(--p-lh-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xlarge) - var(--bp-small) )));
       font-size: calc(( var(--p-size-min) * 1em ) + ( var(--p-size-max) - var(--p-size-min) ) * ((100vw - ( var(--bp-small) * 1em )) / ( var(--bp-xlarge) - var(--bp-small) )));
     }
     @media screen and (min-width: $bp-em-medium) {
-      --text-opsz: var(--p-size-m-px);
       font-stretch: calc( var(--p-wdth-mid) * 1% );
       max-width: 40rem;
     }
@@ -334,7 +297,6 @@ p {
       max-width: 42rem;
     }
     @media (min-width: $bp-em-xlarge) {
-      --text-opsz: var(--p-size-l-px);
       font-size: calc( var(--p-size-max) * 1em );
       font-stretch: calc( var(--p-wdth-max) * 1% );
       line-height: var(--p-lh-max);
