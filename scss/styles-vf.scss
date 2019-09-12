@@ -1,0 +1,146 @@
+/* @font-face syntax */
+
+/* Plex Sans Variable Font */
+@font-face {
+  font-family: 'Plex Sans VF';
+  src: url('../fonts/plex-sans-vf/IBMPlexSansVar-Roman.woff2') format('woff2-variations');
+  font-display: swap;
+  font-stretch: 85% 100%; /* width range */
+  font-style: normal;
+  font-weight: 100 700; /* weight range */
+}
+
+@font-face {
+  font-family: 'Plex Sans VF';
+  src: url('../fonts/plex-sans-vf/IBMPlexSansVar-Italic.woff2') format('woff2-variations');
+  font-display: swap;
+  font-stretch: 85% 100%; /* width range */
+  font-style: italic;
+  font-weight: 100 700; /* weight range */
+}
+
+@font-face {
+  font-family: 'Recursive VF';
+  src: url('../fonts/recursive/recursive-prop_xprn_weight_slnt_ital--2019_08_26.woff2') format('woff2-variations');
+  font-display: swap;
+  font-style: oblique 0deg 15deg;
+  font-weight: 300 900;
+  /* PROP: 0 or 1 */
+  /* XPRN: 0 to 1 */
+  /* ital: 0 or 1 */
+  /* slnt: 0 to -15 */
+}
+
+/* static web fonts */
+@font-face {
+  font-family: 'Plex Sans';
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Regular.eot');
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-Regular.woff2') format('woff2'),
+       url('../fonts/IBM-Plex-Sans/woff/IBMPlexSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plex Sans';
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Bold.eot');
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-Bold.woff2') format('woff2'),
+       url('../fonts/IBM-Plex-Sans/woff/IBMPlexSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Plex Sans';
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Italic.eot');
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-Italic.woff2') format('woff2'),
+       url('../fonts/IBM-Plex-Sans/woff/IBMPlexSans-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Plex Sans';
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-BoldItalic.eot');
+  src: url('../fonts/IBM-Plex-Sans/eot/IBMPlexSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/IBM-Plex-Sans/woff2/IBMPlexSans-BoldItalic.woff2') format('woff2'),
+       url('../fonts/IBM-Plex-Sans/woff/IBMPlexSans-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+body {
+  font-family: "Plex Sans", Helvetica, sans-serif;
+  font-size: 1.25rem;
+  /* only reference variable fonts for browsers that can display them */
+  @supports (font-variation-settings: normal) {
+    font-family: "Plex Sans VF", Helvetica, sans-serif;
+  }
+}
+main {
+  margin: 2rem auto 4rem;
+  max-width: 45rem;
+}
+
+h1 {
+  font-synthesis: none;
+  font-size: 3.5rem;
+  font-stretch: 85%;
+  font-weight: bold;
+  margin: 0 0 1rem;
+  @supports (font-variation-settings: normal) {
+    font-weight: 550;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-synthesis: none;
+  font-weight: normal;
+  margin: 0 0 1rem;
+  @supports (font-variation-settings: normal) {
+    font-weight: 375;
+  }
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-synthesis: none;
+  font-weight: normal;
+  margin: 0 0 1rem;
+  @supports (font-variation-settings: normal) {
+    font-weight: 575;
+  }
+}
+
+em {
+  font-synthesis: none;
+}
+
+strong {
+  font-synthesis: none;
+  font-weight: bold;
+  @supports (font-variation-settings: normal) {
+    font-weight: 550;
+  }
+}
+
+/* Recursive demo */
+:root {
+  --recursive-PROP: 1; /* bool: 0 or 1 */
+  --recursive-XPRN: 1; /* range: 0 to 1 */
+  --recursive-ital: 0; /* bool: 0 or 1 */
+  --recursive-slnt: 0; /* range: 0 to -15 */
+}
+
+.recursive {
+  @supports (font-variation-settings: normal) {
+    font-family: "Recursive VF", Helvetica, sans-serif;
+    font-variation-settings: "PROP" var(--recursive-PROP), "XPRN" var(--recursive-XPRN), "ital" var(--recursive-ital), "slnt" var(--recursive-slnt);
+  }
+}
